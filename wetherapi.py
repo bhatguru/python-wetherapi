@@ -36,11 +36,12 @@ def get_latlng():
     lat,lng = myloc.latlng
     return lat, lng
 #***********************grabs the weather Information from wether API**********************************
+#******replace "xxxx" with your open weathermap api key at line 44 below*******************************
 def get_weatherdata():
     internet = CheckInet()
     if internet == 1:
         cur_lat, cur_lon = get_latlng()
-        url = "http://samples.openweathermap.org/data/2.5/weather?lat="+str(cur_lat)+"&lon="+str(cur_lon)+"&appid=b6907d289e10d714a6e88b30761fae22"
+        url = "http://samples.openweathermap.org/data/2.5/weather?lat="+str(cur_lat)+"&lon="+str(cur_lon)+"&appid=xxxxxxxxxxxxxxxxxxxxxxx"
         req = requests.get(url)
         weather_data = req.json()
         temp = weather_data['main']['temp']
